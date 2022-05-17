@@ -6,3 +6,16 @@
     align-content: start;
     padding: 10%;
 }
+.About div{
+    padding: 1%;
+}
+.About div:hover{
+    animation: flowing 1s infinite;
+}
+@keyframes flowing {
+    100% {
+        transform: rotate(360deg);
+        font-weight: 900;
+        color: blue;
+    }
+}
