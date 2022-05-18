@@ -13,8 +13,9 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import Fiber from "./components/3dcomp/Fiber";
 import Box from "./components/3dcomp/Box";
 import Sphere from "./components/3dcomp/Sphere";
-import Rings from "./components/3dcomp/Rings";
-// import {OrbitControls} from 'drei'
+import Rings from "./components/3dcomp/Rings";    
+import Flower from "./components/3dcomp/Flower";    
+import {OrbitControls} from '@react-three/drei'
 
 function App() {
   return (
@@ -29,6 +30,15 @@ function App() {
           </Suspense>
           <ambientLight intensity = {0.5}/>
           <pointLight position={[0,0,5]} intensity = {0.5}/>
+          <OrbitControls/>
+        </Canvas>
+        <Canvas className={styles.canvas}>
+          <Suspense fallback= {null}>
+            <Flower/>
+          </Suspense>
+          <ambientLight intensity = {0.5}/>
+          <pointLight position={[0,0,5]} intensity = {0.5}/>
+          <OrbitControls/>
         </Canvas>
       </section>
       <Canvas className={styles.canvas}>

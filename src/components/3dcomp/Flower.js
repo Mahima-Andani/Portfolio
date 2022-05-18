@@ -3,14 +3,14 @@ import { useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import {OrbitControls} from '@react-three/drei'
  
- function Fiber(props) {
+ function Flower(props) {
     const [hovered, setHover] = useState(false);
     const meshref = React.useRef()
     const meshref2 = React.useRef()
     useFrame((clock) => {
         // meshref.current.rotation.x = Math.sin(clock.getElapsedTime())
-        meshref.current.rotation.z += 0.01
-        meshref2.current.rotation.z -= 0.01
+        meshref.current.rotation.y += 0.01
+        meshref2.current.rotation.y -= 0.01
     })
    return (
     <>    
@@ -19,8 +19,8 @@ import {OrbitControls} from '@react-three/drei'
             onPointerOver={ (event)=> setHover(true)} 
             onPointerOut={(event)=> setHover(false)} 
         >
-        <ringGeometry attach='geometry' 
-            args={[0.9, 1, 90]}
+        <cylinderGeometry attach='geometry' 
+            args={[2, 1, 0.1]}
         />
         <meshStandardMaterial 
             attach='material' 
@@ -32,8 +32,8 @@ import {OrbitControls} from '@react-three/drei'
             onPointerOver={ (event)=> setHover(true)} 
             onPointerOut={(event)=> setHover(false)} 
         >
-        <ringGeometry attach='geometry' 
-            args={[1.5, 1.6, 90]}
+        <cylinderGeometry attach='geometry' 
+            args={[2,1,0.1]}
         />
         <meshStandardMaterial 
             attach='material' 
@@ -46,4 +46,4 @@ import {OrbitControls} from '@react-three/drei'
   )
  }
  
- export default Fiber
+ export default Flower
