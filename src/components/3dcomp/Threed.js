@@ -6,23 +6,25 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth, window.innerHe
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg')
 })
+Threed()
+export function Threed() {
+  renderer.setPixelRatio(window.devicePixelRatio)
+  renderer.setSize(window.innerWidth, window.innerHeight)
+  camera.position.setZ(30)
 
-renderer.setPixelRatio(window.devicePixelRatio)
-renderer.setSize(window.innerWidth, window.innerHeight)
-camera.position.setZ(30)
+  renderer.render(scene, camera)
 
-renderer.render(scene, camera)
+  //geometry
+  const geometry = new THREE.TorusGeometry(10, 3, 16, 100)
+  const material = new THREE.MeshBasicMaterial({color: 0xFF363, wireframe:true})
+  const torus = new THREE.Mesh(geometry, material)
 
-//geometry
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100)
-const material = new THREE.MeshBasicMaterial({color: 0xFF363, wireframe:true})
-const torus = new THREE.Mesh(geometry, material)
+  scene.add(torus)
 
-scene.add(torus)
+  function animate(){
+      requestAnimationFrame(animate)
 
-function animate(){
-    requestAnimationFrame(animate)
-
-    renderer.render(scene, camera)
+      renderer.render(scene, camera)
+  }
+  animate()
 }
-animate()
