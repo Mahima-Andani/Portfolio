@@ -13,6 +13,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import Fiber from "./components/3dcomp/Fiber";
 import Box from "./components/3dcomp/Box";
 import Sphere from "./components/3dcomp/Sphere";
+import Rings from "./components/3dcomp/Rings";
 // import {OrbitControls} from 'drei'
 
 function App() {
@@ -27,9 +28,16 @@ function App() {
             <Sphere sides={[4,4,4]} color={'blue'}/>
           </Suspense>
           <ambientLight intensity = {0.5}/>
-          <pointLight position={[0,0,5]} intensity = {2.5}/>
+          <pointLight position={[0,0,5]} intensity = {0.5}/>
         </Canvas>
       </section>
+      <Canvas className={styles.canvas}>
+        <Suspense>
+          <Rings/>
+          <ambientLight intensity = {0.5}/>
+          <pointLight position={[0,0,5]} intensity = {2.5}/>
+        </Suspense>
+      </Canvas>
       <Canvas className={styles.canvas}>
         <Suspense fallback= {null}>
           <Fiber sides={[2,3,18]} color={'red'}/>
