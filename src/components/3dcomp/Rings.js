@@ -13,8 +13,7 @@ import {OrbitControls} from '@react-three/drei'
         meshref2.current.rotation.z -= 0.01
     })
    return (
-    <>    
-    
+    <>
         <mesh ref={meshref} 
             onPointerOver={ (event)=> setHover(true)} 
             onPointerOut={(event)=> setHover(false)} 
@@ -31,6 +30,8 @@ import {OrbitControls} from '@react-three/drei'
      <mesh ref={meshref2} 
             onPointerOver={ (event)=> setHover(true)} 
             onPointerOut={(event)=> setHover(false)} 
+            
+            position={[0, 0, 0.1]}
         >
         <ringGeometry attach='geometry' 
             args={[1.5, 1.6, 90]}

@@ -7,8 +7,7 @@ import { Color } from 'three';
  function Fiber(props) {
      const [hovered, setHover] = useState(false);
     const meshref = React.useRef()
-    useFrame((clock) => {
-        // meshref.current.rotation.x = Math.sin(clock.getElapsedTime())
+    useFrame(() => {
         meshref.current.rotation.y += 0.01
     })
    return (
@@ -17,13 +16,13 @@ import { Color } from 'three';
             onPointerOver={ (event)=> setHover(true)} 
             onPointerOut={(event)=> setHover(false)} 
         >
-        <sphereGeometry attach='geometry' 
-            args={[1, 20, 20]}
+        <sphereGeometry 
+            attach='geometry' 
+            args={hovered ? [1, 20, 20] :[1, 10, 10]}
         />
         <meshStandardMaterial 
             attach='material' 
-            color={hovered ? "orange" : "white"}
-            scale ={hovered? [2,1,1]:[1,2,2]}
+            // color={hovered ? "orange" : "white"}
             wireframe
         />
      </mesh>
