@@ -21,11 +21,36 @@ function App() {
           <About/>
         </Suspense>
         <OrbitControls enableZoom={false}/>
-    </Canvas>
+      </Canvas>
       </section>
+
       <Navbar />
       <Skills />
-      <Projects />
+
+      <section className={styles.Projects}>
+      <Canvas>
+        <Suspense fallback= {null}>
+          <pointLight position={[5, 5, 5]} />
+          <Projects />
+        </Suspense>
+        <OrbitControls enableZoom={false}/>
+      </Canvas>
+      <Canvas>
+        <Suspense fallback= {null}>
+          <pointLight position={[5, 5, 5]} />
+          <Projects />
+        </Suspense>
+        <OrbitControls enableZoom={false}/>
+      </Canvas>
+      <Canvas>
+        <Suspense fallback= {null}>
+          <pointLight position={[5, 5, 5]} />
+          <Projects />
+        </Suspense>
+        <OrbitControls enableZoom={false}/>
+      </Canvas>
+      </section>
+      
       <Contact />
         <Canvas className={styles.canvas}>
           <Suspense fallback= {null}>

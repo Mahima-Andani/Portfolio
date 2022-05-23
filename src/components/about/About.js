@@ -4,7 +4,7 @@ import { OrbitControls, Text } from "@react-three/drei"
 
 import CV from './CV'
 import sectionstyles from './About.module.css'
-import RingSphere from '../3dcomp/RingSphere'
+import Sphere from '../3dcomp/Sphere'
 
 // import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 // import { faAtom } from '@fortawesome/free-solid-svg-icons'
@@ -20,52 +20,25 @@ function About() {
   let [active, setActive] = useState(false)
   useFrame((clock) => {
     cwref.current.rotation.z += 0.01
-    acwref.current.rotation.z -= 0.01
+    // acwref.current.rotation.z -= 0.01
     cwref.current.rotation.x += 0.01
-    acwref.current.rotation.x -= 0.01
+    // acwref.current.rotation.x -= 0.01
 })
 
   return (
     <>
-      <mesh ref={cwref} scale={(viewport.width)/5}
-        onPointerOver={ (event)=> setActive(true)} 
-        onPointerOut={(event)=> setActive(false)} 
-      >
-        <RingSphere 
-          position={[0,0,-0.2]}
-          args={[0.7, 0.725 ,90]} 
-          scale={(viewport.width / 5)}
-          color={active? "black" : "grey"}
-        />
-        <RingSphere 
-          position={[0,0,-0.3]}
-          args={[0.9, 0.925 ,90]} 
-          scale={(viewport.width / 5)}
-          color={active? "black" : "grey"}
-        />
-      </mesh>
+    <mesh ref={cwref}>
+    <Sphere
+      position={[1,1,1]}
+      color={0xff0000}
+      wireframe={true}
+      scale={(viewport.width / 5)}
+    />
+    </mesh>
 
-      <mesh ref={acwref} scale={(viewport.width)/5}
-        onPointerOver={ (event)=> setActive(true)} 
-        onPointerOut={(event)=> setActive(false)} 
-      >
-        <RingSphere 
-          position={[0,0,-0.2]}
-          args={[0.7, 0.725 ,90]}
-          scale={(viewport.width / 5)}
-          color={active? "black" : "grey"}
-        />
-        <RingSphere 
-          position={[0,0,-0.3]}
-          args={[0.9, 0.925 ,90]} 
-          scale={(viewport.width / 5)}
-          color={active? "black" : "grey"}
-        />
-      </mesh>
-
-      <Text scale={(viewport.width / 5)} color={"black"}>
-        Hi, I'm Mahima Andani :)
-      </Text>
+    <Text scale={(viewport.width / 5)} color={"black"}>
+      Hi, I'm Mahima Andani :)
+    </Text>
 
       {/* <CV/> */}
         {/* <Title>Hey! <br/> I'm Mahima Andani</Title> */}
