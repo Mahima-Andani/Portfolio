@@ -10,7 +10,7 @@
     padding: 1%;
 }
 .About div:hover{
-    animation: flowing 1s infinite;
+    /* animation: flowing 1s infinite; */
 }
 @keyframes flowing {
     100% {

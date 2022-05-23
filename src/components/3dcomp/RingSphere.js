@@ -13,7 +13,7 @@ function RingSphere(props) {
       
       <meshStandardMaterial 
         attach='material'
-        color={'hotpink'} 
+        color={props.color} 
         wireframe
       />
 
