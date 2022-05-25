@@ -9,12 +9,14 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/skills/Skills";
 import RingSphere from "./components/3dcomp/RingSphere";
+import Rings from "./components/3dcomp/Rings";
+import Fiber from './components/3dcomp/Fiber';
 
 function App() {
   return (
     <>
     
-      <section>
+      <section className={styles.About}>
       <Canvas>
         <Suspense fallback= {null}>
           <pointLight position={[5, 5, 5]} />
@@ -22,10 +24,26 @@ function App() {
         </Suspense>
         <OrbitControls enableZoom={false}/>
       </Canvas>
+      {/* <Canvas>
+        <Suspense fallback= {null}>
+          <pointLight position={[5, 5, 5]} />
+          <Fiber sides={[1,1.2,6]} color={0x6674ef} />
+        </Suspense>
+        <OrbitControls enableZoom={false}/>
+      </Canvas> */}
       </section>
 
       <Navbar />
-      <Skills />
+
+      <section className={styles.Skills}>
+      <Canvas>
+        <Suspense fallback= {null}>
+          <pointLight position={[5, 5, 5]} />
+          <Skills />
+        </Suspense>
+        <OrbitControls enableZoom={false}/>
+      </Canvas>
+      </section>
 
       <section className={styles.Projects}>
       <Canvas>

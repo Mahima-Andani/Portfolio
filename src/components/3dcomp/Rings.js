@@ -19,7 +19,7 @@ import {OrbitControls} from '@react-three/drei'
             onPointerOut={(event)=> setHover(false)} 
         >
         <ringGeometry attach='geometry' 
-            args={[0.9, 1, 90]}
+            args={[0.9, 1, 7]}
         />
         <meshStandardMaterial 
             attach='material' 
@@ -34,7 +34,7 @@ import {OrbitControls} from '@react-three/drei'
             position={[0, 0, 0.1]}
         >
         <ringGeometry attach='geometry' 
-            args={[1.5, 1.6, 90]}
+            args={[1.5, 1.6, 7]}
         />
         <meshStandardMaterial 
             attach='material' 

@@ -15,15 +15,17 @@ import Sphere from '../3dcomp/Sphere'
 
 function About() {
   const cwref = useRef()
-  const acwref = useRef()
+  const dwref = useRef()
+  const ewref = useRef()
+
   const { viewport } = useThree()
   let [active, setActive] = useState(false)
+
   useFrame((clock) => {
-    cwref.current.rotation.z += 0.01
-    // acwref.current.rotation.z -= 0.01
-    cwref.current.rotation.x += 0.01
-    // acwref.current.rotation.x -= 0.01
-})
+    ewref.current.rotation.z += 0.03
+    cwref.current.rotation.x += 0.03
+    dwref.current.rotation.y += 0.03
+  })
 
   return (
     <>
@@ -32,13 +34,30 @@ function About() {
       position={[1,1,1]}
       color={0xff0000}
       wireframe={true}
-      scale={(viewport.width / 5)}
+      scale={(viewport.width / 15)}
+    />
+    </mesh>
+    <mesh ref={dwref}>
+    <Sphere
+      position={[1,1,1]}
+      color={0xff0000}
+      wireframe={true}
+      scale={(viewport.width / 15)}
+    />
+    </mesh>
+    <mesh ref={ewref}>
+    <Sphere
+      position={[1,1,1]}
+      color={0xff0000}
+      wireframe={true}
+      scale={(viewport.width / 15)}
     />
     </mesh>
 
     <Text scale={(viewport.width / 5)} color={"black"}>
       Hi, I'm Mahima Andani :)
     </Text>
+
 
       {/* <CV/> */}
         {/* <Title>Hey! <br/> I'm Mahima Andani</Title> */}
