@@ -1,16 +1,17 @@
 import React, { Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import {OrbitControls} from '@react-three/drei'
+import {OrbitControls, Html} from '@react-three/drei'
 import './App.css';
 import styles from './assets/layout.module.css';
 import About from "./components/about/About";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
-import Skills from "./components/skills/Skills";
+import Skills from "./components/Skills";
 import RingSphere from "./components/3dcomp/RingSphere";
-import Rings from "./components/3dcomp/Rings";
+import Plane from "./components/3dcomp/Plane";
 import Fiber from './components/3dcomp/Fiber';
+import { faClosedCaptioning } from '@fortawesome/fontawesome-free-solid';
 
 function App() {
   return (
@@ -39,10 +40,37 @@ function App() {
       <Canvas>
         <Suspense fallback= {null}>
           <pointLight position={[5, 5, 5]} />
-          <Skills />
+          {/* <Plane i={5} j={5} /> */}
+          {/* <Skills i={5} j={5}/> */}
+          <Html position={[-1,3,0]}>
+                <div className="label">
+                    <ul className={styles.Skill_list}>
+                        <li>Java</li>
+                        <li>Data Structures</li>
+                        <li>Algorithms</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>CSS</li>
+                        <li>HTML</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>SCSS</li>
+                        <li>Hugo</li>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+            </Html>
+          <Skills/>
+        </Suspense>
+        <OrbitControls enabled={false}/>
+      </Canvas>
+      {/* <Canvas>
+        <Suspense fallback= {null}>
+          <pointLight position={[5, 5, 5]} />
+          <Skills/>
         </Suspense>
         <OrbitControls enableZoom={false}/>
-      </Canvas>
+      </Canvas> */}
       </section>
 
       <section className={styles.Projects}>

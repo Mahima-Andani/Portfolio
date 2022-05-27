@@ -17,32 +17,34 @@ import {OrbitControls} from '@react-three/drei'
         <mesh ref={meshref} 
             onPointerOver={ (event)=> setHover(true)} 
             onPointerOut={(event)=> setHover(false)} 
+        
+            position={[0, 0, props.z]}
         >
         <ringGeometry attach='geometry' 
-            args={[0.9, 1, 7]}
+            args={props.args}
         />
         <meshStandardMaterial 
             attach='material' 
             color={hovered ? "hotpink" : "red"}
             wireframe
+            opacity={0.1} transparent
         />
      </mesh>
      <mesh ref={meshref2} 
             onPointerOver={ (event)=> setHover(true)} 
             onPointerOut={(event)=> setHover(false)} 
-            
-            position={[0, 0, 0.1]}
+            position={[0, 0, props.z]}
         >
         <ringGeometry attach='geometry' 
-            args={[1.5, 1.6, 7]}
+            args={props.args}
         />
-        <meshStandardMaterial 
+        <meshPhongMaterial 
             attach='material' 
             color={hovered ? "orange" : "red"}
             wireframe
+            opacity={0.1} transparent
         />
      </mesh>
-     <OrbitControls/>
     </> 
   )
  }

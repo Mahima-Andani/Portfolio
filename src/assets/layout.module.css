@@ -23,6 +23,22 @@ section{
     align-items: center;
 
 }
+.Skills{
+    /* display: flex; */
+    position: relative;
+
+}
+.Skill_list{
+    list-style: none;
+    text-align: center;
+    word-wrap:normal;
+    transform: translate3d(0, 0, 0) scale(1);
+    position: absolute;
+
+    font-weight: 500;
+}
+.Skill_list li{
+}
 /* .canvas{
     max-width: 15%;
     max-height: 15%;
