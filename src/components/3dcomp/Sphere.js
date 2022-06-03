@@ -37,3 +37,11 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
  }
  
  export default Fiber
+//  <pointsMaterial 
+//  size={0.02} sizeAttenuation
+//  color="#066255"
+//  opacity={0.1} 
+//  attach='material' 
+//  // color={hovered ? "orange" : "white"}
+//  // wireframe={props.wireframe}
+// />

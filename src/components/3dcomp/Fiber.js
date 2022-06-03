@@ -1,25 +1,29 @@
 import React from 'react'
 import { useFrame } from '@react-three/fiber';
-import { GradientTexture, MeshWobbleMaterial } from '@react-three/drei';
+import { GradientTexture, MeshReflectorMaterial, MeshWobbleMaterial } from '@react-three/drei';
+
 // import {OrbitControls} from 'drei'
  
  function Fiber(props) {
-   const meshref = React.useRef()
+   const torusref = React.useRef()
     useFrame(({clock}) => {
     // meshref.current.rotation.x = meshref.current.rotation.y = meshref.current.rotation.z = Math.sin(clock.getElapsedTime()) 
     // meshref.current.rotation.y = Math.sin(clock.getElapsedTime()) 
   })
    return (
     <>    
-      <mesh ref={meshref} rotateZ={Math.PI/2}>
-        <ringGeometry attach='geometry' args={props.sides} />
-        <meshPhongMaterial attach='material' color={props.color}>
+      <mesh ref={torusref} position={props.position}>
+        <circleGeometry attach='geometry' args={[(props.scale), 60]} />
+        <MeshReflectorMaterial 
+          attach='material'
+          color={'#d6c5d0'}
+        >
           <GradientTexture
             stops={[0, 1]} // As many stops as you want
-            colors={['aquamarine', 'hotpink']} // Colors need to match the number of stops
+            colors={['#066255', '#feddd4']} // Colors need to match the number of stops
             size={1024} // Size is optional, default = 1024
           />
-        </meshPhongMaterial>
+        </MeshReflectorMaterial>
      </mesh>
       {/* <mesh>
         <boxGeometry />
