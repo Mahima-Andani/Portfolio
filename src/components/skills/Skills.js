@@ -108,7 +108,7 @@ function Skills() {
             position={[0,1,2]}>
             <pointLight position={[5, 5, 5]} />
 
-            <PointGeometry GeometryType={"Ring"} args={[5,5,32]} color={"#039f9b"}/>
+            <PointGeometry GeometryType={"Sphere"} args={[5,50,32]} color={"#f2d6c9"}/>
 
             </perspectiveCamera>
           </Suspense>

@@ -22,8 +22,9 @@ function PlaneMatrix( {m, n}){
 
   const { viewport } = useThree()
   //scene
-  const material = new THREE.MeshPhongMaterial({ color: "#066255" })
-  const PlaneGeometry = new THREE.PlaneGeometry(viewport.width/250, viewport.width/250)
+  const material = new THREE.MeshPhongMaterial({ color: "#066255" , side: THREE.DoubleSide})
+  const PlaneGeometry = new THREE.PlaneGeometry(viewport.width/300, viewport.width/300)
+
   //mouse controls
   const matrixRef = useRef()
   mesh.position = matrixRef
@@ -48,19 +49,20 @@ function PlaneMatrix( {m, n}){
   )
 }
 
-function Camera() {
+function Camera(props) {
   const camera = useRef()
 
   window.addEventListener("mousemove", (event) => {
-    cursor.x = event.clientX / sizes.width - 0.5
-    cursor.y = event.clientY / sizes.height - 0.5
+    cursor.x = event.clientX / sizes.width * -1
+    cursor.y = event.clientY / sizes.height
   })
 
   useFrame(() => {
     if (camera.current && mesh.position.current) {
       // camera.current.position.x = Math.sin(cursor.x * Math.PI * 2) * 2
-      camera.current.position.z = Math.cos(cursor.x * Math.PI * 2) * 2
-      camera.current.position.y = cursor.y * 3
+      camera.current.position.z = cursor.x * 15
+      camera.current.position.y = cursor.y * 2
+      camera.current.position.x = cursor.y * cursor.x
 
       camera.current.lookAt(mesh.position.current.position)
     }
@@ -71,18 +73,18 @@ function Camera() {
         ref={camera}
         fov={75}
         aspect={sizes.width / sizes.height}
-        near={0.1}
+        near={1}
         far={100}
       >
-        <PlaneMatrix m={100} n= {100}/>
+        <PlaneMatrix m={props.m} n= {props.n}/>
       </perspectiveCamera>
   )
 }
 
-function InteractMatrix() {
+function InteractMatrix(props) {
   return (
     <Canvas>
-      <Camera />
+      <Camera m={props.m} n= {props.n}/>
       <spotLight position={[0, 5, 10]} penumbra={1} castShadow />
       <ambientLight />
   </Canvas>

@@ -15,11 +15,6 @@ import Contact from "./components/Contact";
 import RingSphere from "./components/3dcomp/RingSphere";
 
 function App() {
-  // useFrame(()=>{
-  //   if (OrbitControls.getDistance == OrbitControls.maxDistance ) {
-  //     OrbitControls.enableZoom=false
-  //   }
-  // })
   return (
     <>
     
