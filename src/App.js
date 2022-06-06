@@ -21,10 +21,12 @@ function App() {
       <section className={styles.Home}>
       <Canvas >
         <Suspense fallback= {null}>
-          <pointLight position={[5, 5, 25]} />
-          <ambientLight position={[6, 6, 55]} />
+          <ambientLight position={[0, 0, 5]} />
+          <directionalLight position={[-10, 10, 0]} color={'#ff6b6b'} intensity={2.5}/>
+          <directionalLight position={[8, -4, 0]} color={'#241f0a'} intensity={1}/>
           <Home/>
         </Suspense>
+        {/* <orthographicCamera/> */}
       <OrbitControls enableZoom={false}/>
       </Canvas>
       </section>

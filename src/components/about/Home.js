@@ -6,6 +6,7 @@ import CV from './CV'
 import sectionstyles from './About.module.css'
 import Sphere from '../3dcomp/Sphere'
 import Fiber from '../3dcomp/Fiber'
+import Bubble from '../3dcomp/Bubble'
 
 // import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 // import { faAtom } from '@fortawesome/free-solid-svg-icons'
@@ -15,62 +16,39 @@ import Fiber from '../3dcomp/Fiber'
 // const { Title } = Typography;
 
 function Home() {
-  const cwref = useRef()
-  const dwref = useRef()
-  const ewref = useRef()
   const greeting = useRef()
 
   const { viewport } = useThree()
   const scroll = useScroll()
   let [active, setActive] = useState(false)
-
-  useFrame((clock) => {
-    // ewref.current.position.z = scroll.offset * 12
-    ewref.current.rotation.z += 0.03
-    cwref.current.rotation.x += 0.03
-    dwref.current.rotation.y += 0.03
-    // greeting.current.rotation.x = Math.sin(clock.getElapsedTime())
-  
-    
-  })
-
   return (
     <>
-    <mesh ref={cwref}>
-    <Sphere
-      position={[1,1,1]}
-      color={0x6d6cf9}
-      wireframe={true}
+    <Fiber 
+      position={[0,0,-12]}
+      scale={((viewport.width+viewport.height )/ 3)}
+    />
+    <Bubble 
+      position={[-4,3.5,-2]} 
       scale={(viewport.width / 15)}
     />
-    </mesh>
-    <mesh ref={dwref}>
-    <Sphere
-      position={[1,1,1]}
-      color={0x6d6cf9}
-      wireframe={true}
-      scale={(viewport.width / 15)}
+    <Bubble 
+      position={[-6,1.5,-3]} 
+      scale={(viewport.height / 10)}
     />
-    </mesh>
-    <mesh ref={ewref}>
-    <Sphere
-      position={[1,1,1]}
-      color={0x6d6cf9}
-      wireframe={true}
-      scale={(viewport.width / 15)}
+    <Bubble 
+      position={[7.5,-4,-5]} 
+      scale={(viewport.height / 5)}
     />
-    </mesh>
-
-    <Text ref={greeting} scale={(viewport.width / 5)} color={"black"}>
+    <Text ref={greeting} scale={((viewport.width+viewport.height ) / 6)} color={"black"}>
       Hi, I'm Mahima Andani :)
     </Text>
+    
+    {/* <fog attach="fog" args={["f9f2ef", 4, 15]} /> */}
 
-    {/* <fog attach="fog" args={["f9f2ef", 5, 15]} /> */}
-
-    <Fiber position={[5,5,15]} scale={(viewport.width / 5)}/>
+    {/* <Fiber position={[5,5,15]} scale={(viewport.width / 5)}/>
     <Fiber position={[7,7,16]} scale={(viewport.width / 7)}/>
     <Fiber position={[9,9,17]} scale={(viewport.width / 9)}/>
-    <Fiber position={[7,7,18]} scale={(viewport.width / 11)}/>
+    <Fiber position={[7,7,18]} scale={(viewport.width / 11)}/> */}
       {/* <CV/> */}
         {/* <Title>Hey! <br/> I'm Mahima Andani</Title> */}
         {/* <Button type="secondary" className='button'>Say Hi</Button> */}

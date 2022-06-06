@@ -15,9 +15,9 @@ section{
 .Home{
     display: flex;
     background:
-    linear-gradient(120deg, rgba(158,255,210,.8), rgba(158,255,210,0) 70.71%),
+    linear-gradient(240deg, rgba(158,255,210,.8), rgba(158,255,210,0) 70.71%),
     linear-gradient(0deg, rgba(216,186,240,.8), rgba(216,186,240,0) 70.71%),
-    linear-gradient(240deg, rgba(253,207,253,.8), rgba(253,207,253,0) 70.71%);
+    linear-gradient(120deg, rgba(253,207,253,.8), rgba(253,207,253,0) 70.71%);
 }
 .About{
     position: relative;
