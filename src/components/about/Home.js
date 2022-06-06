@@ -39,7 +39,7 @@ function Home() {
     <mesh ref={cwref}>
     <Sphere
       position={[1,1,1]}
-      color={0xff0000}
+      color={0x6d6cf9}
       wireframe={true}
       scale={(viewport.width / 15)}
     />
@@ -47,7 +47,7 @@ function Home() {
     <mesh ref={dwref}>
     <Sphere
       position={[1,1,1]}
-      color={0xff0000}
+      color={0x6d6cf9}
       wireframe={true}
       scale={(viewport.width / 15)}
     />
@@ -55,7 +55,7 @@ function Home() {
     <mesh ref={ewref}>
     <Sphere
       position={[1,1,1]}
-      color={0xff0000}
+      color={0x6d6cf9}
       wireframe={true}
       scale={(viewport.width / 15)}
     />

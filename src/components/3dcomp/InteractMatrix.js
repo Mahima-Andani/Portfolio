@@ -53,7 +53,7 @@ function Camera(props) {
   const camera = useRef()
 
   window.addEventListener("mousemove", (event) => {
-    cursor.x = event.clientX / sizes.width * -1
+    cursor.x = event.clientX / sizes.width -0.5
     cursor.y = event.clientY / sizes.height
   })
 

@@ -18,11 +18,11 @@ const cursor = {
 
     window.addEventListener("mousemove", (event) => {
         cursor.x = event.clientX / sizes.width - 0.5
-        cursor.y = event.clientY / sizes.height - 0.5
+        cursor.y = event.clientY / sizes.height -0.5
     })
 
     useFrame(() => {
-        ref.current.position.z = Math.sin(cursor.x * Math.PI * 2) * 5
+        ref.current.position.z = Math.sin(cursor.x * Math.PI * 2)
         ref.current.position.y = cursor.y * -5
     })
 

@@ -1,0 +1,5 @@
+I was able to accomplish this project due to a variety of reasons.
+I'm saving the most helpful resources for everyone who might wish to learn in detail.
+Here are the blogs that I found extremely helpful.
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Images/Using_CSS_gradients
