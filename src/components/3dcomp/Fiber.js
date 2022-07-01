@@ -1,15 +1,17 @@
 import React from 'react'
-import { useFrame } from '@react-three/fiber';
 import { GradientTexture, MeshReflectorMaterial, MeshWobbleMaterial } from '@react-three/drei';
-
 // import {OrbitControls} from 'drei'
+import EventControl from '../EventControl';
  
  function Fiber(props) {
    const ref = React.useRef()
 
    return (
     <>    
-      <mesh ref={ref} position={props.position}>
+      <mesh 
+        ref={ref}
+        position={props.position}
+      >
         <sphereGeometry attach='geometry' args={[(props.scale), 60, 60]} />
         <MeshReflectorMaterial 
           attach='material'
@@ -20,6 +22,7 @@ import { GradientTexture, MeshReflectorMaterial, MeshWobbleMaterial } from '@rea
           />
         </MeshReflectorMaterial>
      </mesh>
+     <EventControl refProp={ref}/>
       {/* <mesh>
         <boxGeometry />
         <MeshWobbleMaterial factor={1} speed={1} />

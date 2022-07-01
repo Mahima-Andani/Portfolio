@@ -4,7 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { MeshDistortMaterial, GradientTexture, useCursor } from '@react-three/drei'
 import EventControl from '../EventControl';
 
-function Bubble(props) {
+function Wballs(props) {
   const ref = useRef()
   const [hovered, hover] = useState(false)
   useCursor(hovered)
@@ -20,15 +20,13 @@ function Bubble(props) {
         position={props.position} 
     >
       <sphereGeometry 
-        args={[(props.scale), 20, 20]}
+        args={[.5, 20, 20]}
       />
-      <MeshDistortMaterial ref={ref} speed={5} transparent opacity={0.3}>
-        <GradientTexture stops={[0, 0.8, 1]} colors={['#fdcffd', '#6d6cf9', '#9effd2']} size={100} />
-      </MeshDistortMaterial>
+      <MeshDistortMaterial ref={ref} speed={3} color={"white"}/>
     </mesh>
     {/* <EventControl refProp={ref}/> */}
     </>
   )
 }
 
-export default Bubble
+export default Wballs

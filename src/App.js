@@ -26,7 +26,6 @@ function App() {
           <directionalLight position={[8, -4, 0]} color={'#241f0a'} intensity={1}/>
           <Home/>
         </Suspense>
-        {/* <orthographicCamera/> */}
       <OrbitControls enableZoom={false}/>
       </Canvas>
       </section>
