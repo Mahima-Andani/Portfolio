@@ -11,18 +11,22 @@ import EventControl from '../EventControl';
       <mesh 
         ref={ref}
         position={props.position}
+        scale={props.scale}
       >
-        <sphereGeometry attach='geometry' args={[(props.scale), 60, 60]} />
-        <MeshReflectorMaterial 
-          attach='material'
+        <sphereGeometry attach='geometry' args={[1.5, 60, 60]}/>
+        <meshStandardMaterial
+          attach='material'color={'#fec04d'}
+          // metalness={0.1}
+          roughness={0.5}
+          clearcoat={0.1}
         >
-          <GradientTexture
+          {/* <GradientTexture
             stops={[0.1, 0.8, 0.2]} // As many stops as you want
-            colors={['#fdcffd', '#6d6cf9', '#9effd2']} // Colors need to match the number of stops
-          />
-        </MeshReflectorMaterial>
+            colors={['#f5ef63', '#ffe388', '#fec04d']} // Colors need to match the number of stops
+          /> */}
+        </meshStandardMaterial>
      </mesh>
-     <EventControl refProp={ref}/>
+     {/* <EventControl refProp={ref}/> */}
       {/* <mesh>
         <boxGeometry />
         <MeshWobbleMaterial factor={1} speed={1} />

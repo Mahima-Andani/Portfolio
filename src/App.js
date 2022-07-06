@@ -19,11 +19,11 @@ function App() {
     <>
     
       <section className={styles.Home}>
-      <Canvas >
+      <Canvas>
         <Suspense fallback= {null}>
           <ambientLight position={[0, 0, 5]} />
-          <directionalLight position={[-10, 10, 0]} color={'#ff6b6b'} intensity={2.5}/>
-          <directionalLight position={[8, -4, 0]} color={'#241f0a'} intensity={1}/>
+          <directionalLight position={[0,10, 2]} color={'#feadb9'} intensity={2.5} castShadow/>
+          <directionalLight position={[0, 0, 10]} color={'#bc85a3'} intensity={1.5}/>
           <Home/>
         </Suspense>
       <OrbitControls enableZoom={false}/>

@@ -21,9 +21,12 @@ function EventControl(props) {
     })
 
     useFrame(() => {
-        props.refProp.current.position.z = Math.sin(cursor.x * Math.PI * 2)
-        props.refProp.current.position.y = cursor.y * -5
-        props.refProp.current.position.z =  (scrollY / sizes.height)*0.010 -0.5
+        // props.refProp.current.position.z = Math.sin(cursor.x * Math.PI * 2)
+        // props.refProp.current.position.y = cursor.y * -5
+        // props.refProp.current.position.z =  (scrollY / sizes.height)*0.010 -0.5
+        props.leftProp.current.position.x = (scrollY / sizes.height)*-2.5
+        props.rightProp.current.position.x = (scrollY / sizes.height)*2.5
+
     })
 
   return (

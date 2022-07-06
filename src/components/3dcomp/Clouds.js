@@ -4,7 +4,7 @@ import Wballs from './Wballs'
 function Clouds() {
   return (
     <>
-    <mesh>
+    <group>
     <Wballs 
       // position={[-4,3.5,-2]} 
       position={[-.5,-.4,0]} 
@@ -23,8 +23,8 @@ function Clouds() {
     <Wballs 
       position={[-1.8,.05,0]} 
     />
-    </mesh>
-    <mesh>
+    </group>
+    <group>
     <Wballs 
       // position={[-4,3.5,-2]} 
       position={[.5,-.4,0]} 
@@ -43,7 +43,7 @@ function Clouds() {
     <Wballs 
       position={[1.8,.05,0]} 
     />
-    </mesh>
+    </group>
 
     </>
   )

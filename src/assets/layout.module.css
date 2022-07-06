@@ -5,7 +5,7 @@ body{
     letter-spacing: 0.02em;
     overflow-x: hidden;
     box-sizing: border-box;
-    background-color: #f9f2ef;
+    background-color: #e1eaef;
 }
 ::-webkit-scrollbar {display:none;}
 
@@ -14,15 +14,19 @@ section{
 }
 .Home{
     display: flex;
-    /* background:
-    linear-gradient(240deg, rgba(158,255,210,.8), rgba(158,255,210,0) 70.71%),
-    linear-gradient(0deg, rgba(216,186,240,.8), rgba(216,186,240,0) 70.71%),
-    linear-gradient(240deg, rgba(253,207,253,.8), rgba(253,207,253,0) 70.71%); */
+    background-color: #e1eaef8e;
+    background:
+    linear-gradient(340deg, #fef8b4, rgba(158,255,210,0) 70.71%),
+    linear-gradient(50deg, rgba(216,186,240,.8), rgba(216,186,240,0) 70.71%),
+    linear-gradient(200deg, rgba(158,255,210,.8), rgba(253,207,253,0) 70.71%);
 }
 .About{
-    position: relative;
-    background-color: #000;
-    color: #fdcffd;
+    /* position: relative; */
+        /* background:
+    linear-gradient(240deg, #e1eaef, rgba(158,255,210,0) 70.71%),
+    linear-gradient(0deg, #fef8b4, rgba(216,186,240,0) 70.71%),
+    linear-gradient(240deg, #f9f2ef, rgba(253,207,253,0) 70.71%); */
+    background: #d6c5d0;
 }
 .Projects{
     display: flex;
@@ -52,7 +56,8 @@ section{
 } */
 .skill_section{
     /* display: flex; */
-   background-color: #00312e;
+   /* background-color: #00312e; */
+   background-color: #fef8b4;
    padding: 0;
    margin: 0;
    position: relative;
